@@ -34,7 +34,7 @@ Recomendações para o Instagram/TikTok não degradarem a imagem:
 Todas as animações estão presas ao tempo de cada palavra.
 1. Substitua `public/narracao_corpo.wav` (corte o áudio exatamente antes de "Você pode acreditar em mim").
 2. Gere a transcrição com tempo por palavra (ElevenLabs Speech-to-Text, `timestamps_granularity=word`) e salve como `scripts/transcricao.json`.
-3. Rode `node scripts/gerar-dados.js <pasta com node_modules de d3-geo e topojson-client>` para atualizar `src/data/palavras.json` (legenda).
+3. Rode `node scripts/gerar-dados.js` para atualizar `src/data/palavras.json` (legenda).
 4. Ajuste os tempos fixos das cenas (`tIn`, `tOut` e os `t0` de cada elemento em `src/cenas-a.tsx` e `src/cenas-b.tsx`), além de `CORPO_S` em `src/tokens.ts`.
 
 ## Estrutura

@@ -1,10 +1,9 @@
 // Pré-calcula dados usados pelo vídeo: mapas (caminhos SVG planos) e tempos das palavras da legenda.
-// Uso: node scripts/gerar-dados.js <pasta-com-node_modules-de-d3-geo-e-topojson-client>
+// Uso (na raiz do projeto): node scripts/gerar-dados.js
 const fs = require('fs');
 const path = require('path');
-const M = process.argv[2];
-const d3 = require(path.join(M, 'node_modules/d3-geo'));
-const topo = require(path.join(M, 'node_modules/topojson-client'));
+const d3 = require('d3-geo');
+const topo = require('topojson-client');
 const here = (...p) => path.join(__dirname, ...p);
 const out = (name, data) => fs.writeFileSync(here('../src/data', name), JSON.stringify(data));
 
