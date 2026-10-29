@@ -30,19 +30,20 @@ export const Captions: React.FC = () => {
 		const end = Math.min(p.startMs + p.durationMs, next ? next.startMs : Infinity);
 		return ms >= p.startMs && ms < end;
 	});
-	if (!page) {
+	// no cartão final a pergunta já aparece grande na tela
+	if (!page || t >= 72.0) {
 		return null;
 	}
 	const enter = pop(t, page.startMs / 1000, 16);
 	return (
-		<AbsoluteFill style={{top: 1390, height: 260, alignItems: 'center', justifyContent: 'center'}}>
+		<AbsoluteFill style={{top: 1400, height: 280, alignItems: 'center', justifyContent: 'center'}}>
 			<div
 				style={{
 					maxWidth: 960,
 					textAlign: 'center',
 					fontFamily: FONT,
 					fontWeight: 800,
-					fontSize: 76,
+					fontSize: 80,
 					lineHeight: 1.2,
 					whiteSpace: 'pre-wrap',
 					transform: `scale(${interpolate(enter, [0, 1], [0.85, 1])})`,

@@ -6,6 +6,7 @@ Motion graphic vertical (1080×1920, 30 fps, 1min14) feito com Remotion, com nar
 - `src/tempos.json` — tempos de cada trecho e de cada palavra. As cenas e as legendas são calculadas a partir dele.
 - `src/scenes.tsx` — uma cena por trecho (01 a 11).
 - `src/Captions.tsx` — legenda estilo TikTok com a palavra falada em destaque.
+- `src/sfx.ts` — efeitos sonoros (momento e volume). Os arquivos ficam em `public/sfx`; `pop`, `boing` e `beep` foram sintetizados com ffmpeg, os demais vêm de remotion.media.
 
 ## Comandos
 

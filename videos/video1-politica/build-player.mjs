@@ -15,6 +15,7 @@ await build({
 	outfile: 'dist/player.js',
 });
 fs.cpSync('public/fonts', 'dist/fonts', {recursive: true});
+fs.cpSync('public/sfx', 'dist/sfx', {recursive: true});
 // Prévia usa MP3 (menor); o render final continua usando o WAV original.
 execSync('ffmpeg -loglevel error -y -i public/narracao.wav -b:a 160k dist/narracao.mp3');
 fs.copyFileSync('player/index.html', 'dist/index.html');
