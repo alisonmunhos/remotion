@@ -1,0 +1,25 @@
+{
+	"name": "video1-politica",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "remotion studio",
+		"render": "remotion render Video1 out/video1.mp4",
+		"player": "node build-player.mjs"
+	},
+	"dependencies": {
+		"@remotion/captions": "4.0.539",
+		"@remotion/cli": "4.0.539",
+		"@remotion/google-fonts": "4.0.539",
+		"@remotion/player": "4.0.539",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"remotion": "4.0.539"
+	},
+	"devDependencies": {
+		"@types/react": "19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"esbuild": "0.25.5",
+		"typescript": "5.8.3"
+	}
+}

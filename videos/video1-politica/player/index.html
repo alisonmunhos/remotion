@@ -1,0 +1,96 @@
+<meta charset="utf-8">
+<title>Quem Decide a Temperatura</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap">
+<style>
+/* Layout: o vídeo vertical ocupa a altura da tela; a lista de trechos fica ao lado (tablet deitado) ou embaixo (em pé). */
+:root {
+	--bg: #0E1A2B;
+	--panel: #172A44;
+	--line: #2A4366;
+	--ink: #FFFFFF;
+	--muted: #9FB3C8;
+	--yellow: #FFD166;
+	--hot: #FF7A45;
+	--display: 'Poppins', system-ui, sans-serif;
+	color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+	background: var(--bg);
+	color: var(--ink);
+	font-family: var(--display);
+	padding-left: max(16px, env(safe-area-inset-left, 0px));
+	padding-right: max(16px, env(safe-area-inset-right, 0px));
+	padding-block: 16px;
+	box-sizing: border-box;
+}
+.wrap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.stage {
+	height: min(calc(100dvh - 32px), 1000px);
+	aspect-ratio: 9 / 16;
+	max-width: 100%;
+	border-radius: 18px;
+	overflow: hidden;
+	background: #000;
+	box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+#root { width: 100%; height: 100%; }
+aside { flex: 1 1 300px; max-width: 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1 { font-size: 28px; font-weight: 800; line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 span { color: var(--yellow); }
+p.note { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 0; }
+ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+button.seg {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 34px 52px 1fr;
+	gap: 8px;
+	align-items: baseline;
+	text-align: left;
+	background: var(--panel);
+	color: var(--ink);
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	padding: 10px 12px;
+	font: 500 14px/1.35 var(--display);
+	cursor: pointer;
+}
+button.seg:hover { border-color: var(--yellow); }
+button.seg:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.n { font-weight: 800; color: var(--hot); font-variant-numeric: tabular-nums; }
+.t { color: var(--muted); font-variant-numeric: tabular-nums; }
+</style>
+
+<div class="wrap">
+	<div class="stage"><div id="root"></div></div>
+	<aside>
+		<p class="eyebrow">Vídeo 1 · 9:16 · 1min14</p>
+		<h1>Quem decide a <span>temperatura?</span></h1>
+		<p class="note">Prévia ao vivo da animação, com a narração e as legendas. Toque no vídeo para tocar ou pausar. Use os trechos abaixo para pular direto para uma cena e me dizer o que mudar.</p>
+		<ol>
+			<li><button class="seg" type="button" onclick="seekToSeconds(0)"><span class="n">01</span><span class="t">0:00</span><span>Pergunta de abertura</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(3.3)"><span class="n">02</span><span class="t">0:03</span><span>A sala com 5 pessoas</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(12.38)"><span class="n">03</span><span class="t">0:12</span><span>Uma discussão boba?</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(14.82)"><span class="n">04</span><span class="t">0:14</span><span>Uma decisão afeta todos</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(19.87)"><span class="n">05</span><span class="t">0:19</span><span>Os elásticos</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(26.86)"><span class="n">06</span><span class="t">0:26</span><span>Três formas de decidir</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(35.28)"><span class="n">07</span><span class="t">0:35</span><span>Resultados diferentes</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(39.79)"><span class="n">08</span><span class="t">0:39</span><span>Onde a política começa</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(51.68)"><span class="n">09</span><span class="t">0:51</span><span>Dinheiro, escolas, saúde</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(57.46)"><span class="n">10</span><span class="t">0:57</span><span>Isso é política</span></button></li>
+			<li><button class="seg" type="button" onclick="seekToSeconds(65.54)"><span class="n">11</span><span class="t">1:05</span><span>De volta à sala</span></button></li>
+		</ol>
+	</aside>
+</div>
+<script type="module" src="player.js"></script>
