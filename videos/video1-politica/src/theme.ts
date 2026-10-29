@@ -4,23 +4,22 @@ export const FPS = 30;
 export const WIDTH = 1080;
 export const HEIGHT = 1920;
 
+// Paleta editorial: papel frio, tinta quase preta e dois sinais de temperatura.
+// O amarelo é reservado para o conceito central (DECIDIR).
 export const C = {
-	bg1: '#0E1A2B',
-	bg2: '#1B2E4A',
-	ink: '#FFFFFF',
-	muted: '#9FB3C8',
-	hot: '#FF7A45',
-	cold: '#4FC3F7',
-	yellow: '#FFD166',
-	green: '#7BD389',
-	wall: '#22385A',
-	floor: '#1A2C47',
-	line: '#35527D',
+	paper: '#ECEEF0',
+	wall: '#E2E5E9',
+	grid: '#D6DBE1',
+	ink: '#0F1720',
+	muted: '#7A8594',
+	white: '#FFFFFF',
+	cold: '#1F5BFF',
+	hot: '#FF4A1C',
+	yellow: '#FFC21A',
+	green: '#16A36A',
 };
 
-export const PEOPLE_COLORS = ['#4FC3F7', '#4DB6E8', '#FF8A65', '#B39DDB', '#81C784'];
-
-export const FONT = 'Poppins, sans-serif';
+export const FONT = "'Archivo', 'Helvetica Neue', Arial, sans-serif";
 
 // No Studio/render os arquivos vêm de public/ via staticFile().
 // No player publicado eles ficam ao lado da página, então usamos caminho relativo.
